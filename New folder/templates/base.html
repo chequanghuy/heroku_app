@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    {% load static %}
+    <link rel="icon" href="{% static "/img/101131327_944476156005593_7311033385839755264_n.png" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "/css/styles.css" %}"">
+</head>
+
+<body>
+    
+    <div class=" grid-container" style="margin-top: 20px;">
+    <div class="item1" style="text-align: right;"><img
+            src="{% static "/img/101131327_944476156005593_7311033385839755264_n.png" %}" alt="logo"
+            style="width: 60%; height: 100%;"></div>
+    <div class="item2" style="margin-top: 30px;text-align: left;">
+        <div style="font-size: 25px;"><strong> ĐẠI HỌC THỦ DẦU MỘT</strong></div>
+        <div style="font-size: 20px;">KHOA KỸ THUẬT - CÔNG NGHỆ</div>
+        <div style="font-size: 20px;">PHÂN TÍCH TRỰC QUAN DỮ LIỆU TUYỂN SINH ĐẠI HỌC</div>
+        <div style="font-size: 15px; text-align: right;">Học Viên: NGUYỄN THANH HUẾ</div>
+        <div style="font-size: 15px; text-align: right;">Người Hướng Dẫn: TS. BÙI THANH HÙNG</div>
+    </div>
+
+    </div>
+    <!-- Sidebar (hidden by default) -->
+    <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
+        style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button">Close Menu</a>
+        <a href="#cq" onclick="w3_close()" class="w3-bar-item w3-button">Chính Quy 2017-2018</a>
+        <a href="#tx" onclick="w3_close()" class="w3-bar-item w3-button">Thường Xuyên 2017-2018</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">2018</a>
+    </nav>
+
+    <!-- Top menu -->
+    <div class="w3-top">
+        <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+            <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+            <div class="w3-right w3-padding-16"></div>
+            <div class="w3-center w3-padding-16">STATISTICS</div>
+        </div>
+    </div>
+    <!-- !PAGE CONTENT! -->
+
+    <div class="w3-main w3-content w3-padding" style="max-width:1200px">
+        <hr id="cq">
+        <div id="excelsheet"></div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart" width="1000"></canvas>
+            </div>
+        </div>
+        <div id="mytable"></div>
+        <hr>
+        <div id="mytable1"></div>
+        <hr>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart2" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap1' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart3" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap2' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart4" width="1000"></canvas>
+            </div>
+        </div>
+        <div id="mytable2"></div>
+        <hr>
+        <div id="mytable3"></div>
+        <hr>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart5" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap3' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart6" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap4' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart7" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap5' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap6' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="myChart" width="1000"></canvas>
+            </div>
+        </div>
+        <div>Hệ số tương quan pearson giữa Điểm và Chỉ tiêu là <span id="pearson1"></span></div>
+        <div>Hệ số tương quan spearman giữa Điểm và Chỉ tiêu là <span id="spearman1"></span> </div>
+        <div>Hệ số tương quan pearson giữa Điểm và Trúng tuyển là <span id="pearson2"></span> </div>
+        <div>Hệ số tương quan spearman giữa Điểm và Trúng tuyển là <span id="spearman2"></span> </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="myChart1" width="1000"></canvas>
+            </div>
+        </div>
+        <div>Hệ số tương quan pearson giữa Điểm và Chỉ tiêu là <span id="pearson3"></span></div>
+        <div>Hệ số tương quan spearman giữa Điểm và Chỉ tiêu là <span id="spearman3"></span> </div>
+        <div>Hệ số tương quan pearson giữa Điểm và Trúng tuyển là <span id="pearson4"></span> </div>
+        <div>Hệ số tương quan spearman giữa Điểm và Trúng tuyển là <span id="spearman4"></span> </div>
+        <hr>
+        <hr id="tx">
+        <hr>
+        <div id="excelsheet1"></div>
+        <hr>
+        <div id="excelsheet2"></div>
+        <hr>
+        <div id="excelsheet3"></div>
+        <hr>
+        <div id="excelsheet4"></div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart9" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart10" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart11" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart12" width="1000"></canvas>
+            </div>
+        </div>
+        <div id="mytable4"></div>
+        <hr>
+        <div id="mytable6"></div>
+        <hr>
+        <div id="mytable8"></div>
+        <hr>
+        <div id="mytable9"></div>
+        <hr>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart13" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart14" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart15" width="1000"></canvas>
+            </div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart16" width="1000"></canvas>
+            </div>
+        </div>
+
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap7' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap8' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap9' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmap10' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="myChartTX2017d1" width="1000"></canvas>
+            </div>
+        </div>
+        <div>Hệ số tương quan person là <span id="pearson5"></span> </div>
+        <div>Hệ số tương quan sperman là <span id="spearman5"></span> </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="myChartTX2017d2" width="1000"></canvas>
+            </div>
+        </div>
+        <div>Hệ số tương quan person là <span id="pearson6"></span> </div>
+        <div>Hệ số tương quan sperman là <span id="spearman6"></span> </div>
+        <hr>
+        <hr>
+
+        <div id="mytable5"></div>
+        <hr>
+        <div id="mytable7"></div>
+        <hr>
+        <!-- About Section -->
+
+        <hr id="about">
+        <!-- CQ SHEET -->
+        <div id="excelsheetCQ"></div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChart18" width="1000"></canvas>
+            </div>
+        </div>
+        <div id="mytableCQ"></div>
+        <hr>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPie" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPie' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPie1" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPie1' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPie2" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPie2' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPie3" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPie3' class="zingchart"></div>
+        </div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPie4" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPie4' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="myChartCQ" width="1000"></canvas>
+            </div>
+        </div>
+        <div>Hệ số tương quan person là <span id="pearson7"></span> </div>
+        <div>Hệ số tương quan sperman là <span id="spearman7"></span> </div>
+        <!-- END CQ SHEET -->
+        <hr>
+        <!-- TX SHEET -->
+        <div id="excelsheetTX"></div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPieTX" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPieTX' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChartTX1" width="1000"></canvas>
+            </div>
+        </div>
+        <div id="mytableTX"></div>
+        <!-- END TX SHEET -->
+        <hr>
+        <!-- CH SHEET -->
+        <div id="excelsheetCH"></div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPieCH" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPieCH' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPieCH1" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPieCH1' class="zingchart"></div>
+        </div>
+
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="myChartCH" width="1000"></canvas>
+            </div>
+        </div>
+        <div>Hệ số tương quan person là <span id="pearson8"></span> </div>
+        <div>Hệ số tương quan sperman là <span id="spearman8"></span> </div>
+        <!-- END CH SHEET -->
+        <hr>
+        <!-- TINH SHEET-->
+        <div id="excelsheetTINH"></div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChartTINH" width="1000"></canvas>
+            </div>
+        </div>
+        <div id="mytableTINH"></div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChartTINH1" width="1000"></canvas>
+            </div>
+        </div>
+        <div id="mytableTINH1"></div>
+        <hr>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChartTINH2" width="1000"></canvas>
+            </div>
+        </div>
+        <div id="mytableTINH2"></div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="genderChartTINH3" width="1000"></canvas>
+            </div>
+        </div>
+        <div id="mytableTINH3"></div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPieTINH" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPieTINH' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPieTINH1" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPieTINH1' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPieTINH2" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPieTINH2' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="MyPieTINH3" width="1000"></canvas>
+            </div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px" class="zingchart0">
+            <div id='heatmapPieTINH3' class="zingchart"></div>
+        </div>
+        <div style="margin-top:30px;margin-bottom: 30px">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <canvas id="myChartTINH" width="1000"></canvas>
+            </div>
+        </div>
+        <div>Hệ số tương quan person là <span id="pearson9"></span> </div>
+        <div>Hệ số tương quan sperman là <span id="spearman9"></span> </div>
+        <hr>
+        <!-- END TINH SHEET -->
+    </div>
+    {% load static %}
+    <script type="text/javascript" src="{% static "/js/process.js" %}"></script>
+    </body>
+
+</html>
